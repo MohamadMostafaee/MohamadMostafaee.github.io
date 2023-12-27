@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-size: 175%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.section-container {
+    text-align: center; /* Centers inline(-block) elements horizontally */
+}
+
+.section {
+    display: inline-block; /* Makes the element inline for horizontal centering but allows block properties */
+    width: calc(33.3333% - 40px);
+    padding: 20px;
+    margin: 10px; /* Horizontal margins, adjust as needed */
+    background-color: #ccc; /* Light grey background */
+    border: 1px solid #000;
+    vertical-align: top; /* Aligns top edges of inline-block elements */
+}
+
+.section p {
+    margin-top: 50px; /* Adjust top margin to avoid overlap with the section title */
+}
+
+/* Section titles with individual background colors */
+#chicken h2 {
+    background-color: #ffa07a; /* Light salmon color */
+    color: #fff; /* White text */
+}
+
+#beef h2 {
+    background-color: #f08080; /* Light coral color */
+    color: #fff; /* White text */
+}
+
+#sushi h2 {
+    background-color: #afeeee; /* Pale turquoise color */
+    color: #333; /* Example color for dark text */
+}
+
+/* Tablet view */
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        width: calc(50% - 35px); /* Subtracting the total horizontal margins from 50% width */
+        margin: 10px; /* Horizontal margin 20px on each side (left + right) */
+    }
+
+    #sushi {
+        width: calc(100% - 50px); /* Full width minus the total horizontal margins */
+        margin: 10px auto; /* Centering the 'Sushi' section as it's a single column */
+        margin-left: 10px;
+        clear: both; /* Ensure this section falls to a new line */
+    }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+    .section {
+        width: calc(100% - 40px); /* Full width minus margin for a single column layout */
+    }
+}
